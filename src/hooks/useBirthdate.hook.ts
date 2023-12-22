@@ -73,7 +73,7 @@ export function useBirthdate(bday: string | undefined) {
 }
 
 export const DECADE_LABELS = [
-  "Childhood",
+  "Early years",
   "Teens",
   "20s",
   "30s",

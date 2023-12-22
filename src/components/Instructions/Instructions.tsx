@@ -70,33 +70,34 @@ const Instructions = ({
       </menu>
 
       {showInstructions && (
-        <ol className={styles.instructions}>
-          <li className={styles.step}>Select your birthdate.</li>
-          <li className={styles.step}>Select an accent color (optional).</li>
-          <li className={styles.step}>
-            Each box is a week of your life, grouped by decade. Hover over any
-            week to see its dates.
-          </li>
-          <li className={styles.step}>
-            Click any week to add a life event.{" "}
+        <>
+          <ol className={styles.instructions}>
+            <li className={styles.step}>Select your birthdate.</li>
+            <li className={styles.step}>Select an accent color (optional).</li>
+            <li className={styles.step}>
+              Each box is a week of your life, grouped by decade. Hover over any
+              week to see its dates.
+            </li>
+            <li className={styles.step}>
+              Click any week to add a life event.{" "}
+              <em>
+                If you&apos;d like inspiration, look at Buster&apos;s version
+                linked above!
+              </em>
+            </li>
+            <li className={styles.step}>
+              Click on any decade title (e.g. &quot;Early years&quot;) to edit
+              its label. The heading atop this page is editable, too.
+            </li>
+          </ol>
+          <p className={styles.note}>
             <em>
-              If you&apos;d like inspiration, look at Buster&apos;s version
-              linked above!
-            </em>
-          </li>
-          <li className={styles.step}>
-            Click on any decade title (e.g. &quot;Childhood&quot;) to edit its
-            label. The heading atop this page is editable, too.
-          </li>
-          <li className={styles.step}>
-            <em>
-              Your life events are saved in the URL. So if you accidentally
+              Everything you write is saved in the URL. So if you accidentally
               click the reset button or close the browser tab, you can hit the
-              browser back button or visit your history to restore your
-              progress.
+              back button or visit history to restore your progress.
             </em>
-          </li>
-        </ol>
+          </p>
+        </>
       )}
     </>
   );

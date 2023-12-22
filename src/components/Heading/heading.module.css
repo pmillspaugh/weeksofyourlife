@@ -1,8 +1,14 @@
 .h1 {
-  font-size: 3rem;
+  font-size: 2.25rem;
   line-height: 1.4;
 }
 
-.h2 {
-  font-size: 2rem;
+@media (min-width: 768px) {
+  .h1 {
+    font-size: 3rem;
+  }
+
+  .h2 {
+    font-size: 2rem;
+  }
 }
