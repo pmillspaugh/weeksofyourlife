@@ -20,15 +20,18 @@ const Heading = ({
     const savedHeading = searchParams.get(urlKey);
     if (savedHeading) {
       setHeading(decodeURIComponent(savedHeading));
-      document.title = decodeURIComponent(savedHeading);
+
+      if (Tag === "h1") {
+        document.title = decodeURIComponent(savedHeading);
+      }
     }
-  }, [searchParams, urlKey]);
+  }, [searchParams, Tag, urlKey]);
 
   function saveHeading(e: React.FocusEvent<HTMLHeadingElement>) {
     const newHeading = e.target.innerText;
     const newParams = new URLSearchParams(Array.from(searchParams.entries()));
     newParams.set(urlKey, encodeURIComponent(newHeading));
-    router.push(`?${newParams.toString()}`);
+    router.push(`?${newParams.toString()}`, { scroll: false });
   }
 
   return (

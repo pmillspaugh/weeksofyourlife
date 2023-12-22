@@ -14,7 +14,7 @@ export function useBirthdate(bday: string | undefined) {
 
     const newParams = new URLSearchParams(Array.from(searchParams.entries()));
     newParams.set("birthdate", newBday);
-    router.push(`?${newParams.toString()}`);
+    router.push(`?${newParams.toString()}`, { scroll: false });
   }
 
   const decades = React.useMemo(() => {

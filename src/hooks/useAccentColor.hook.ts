@@ -32,7 +32,7 @@ export function useAccentColor(accent: string | undefined) {
 
     const newParams = new URLSearchParams(Array.from(searchParams.entries()));
     newParams.set("accent", newAccentColor);
-    router.push(`?${newParams.toString()}`);
+    router.push(`?${newParams.toString()}`, { scroll: false });
   }, 50);
 
   return { accentColor, handleAccentColorChange };

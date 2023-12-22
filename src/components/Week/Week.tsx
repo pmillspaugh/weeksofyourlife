@@ -35,7 +35,7 @@ const MemoizedWeek = React.memo(function Week({ week }: { week: IWeek }) {
       ? newParams.set(sundayKey, encodeURIComponent(newEvent))
       : newParams.delete(sundayKey);
 
-    router.push(`?${newParams.toString()}`);
+    router.push(`?${newParams.toString()}`, { scroll: false });
   }, 100);
 
   function handleLifeEventChange(e: React.ChangeEvent<HTMLInputElement>) {
