@@ -1,0 +1,17 @@
+.futureWeek {
+  min-width: 16px;
+  width: max-content;
+  height: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: var(--font-mono), monospace;
+  font-size: 1rem;
+
+  padding: 2px 8px;
+  border: 1.5px solid var(--accent-color);
+  border-radius: 4px;
+  background: var(--neutral-color);
+}

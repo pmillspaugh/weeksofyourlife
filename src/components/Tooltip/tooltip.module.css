@@ -1,0 +1,34 @@
+@keyframes scale-in {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-out {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.content {
+  padding: 16px;
+
+  color: var(--background-color);
+  background: var(--foreground-color);
+  border-radius: 4px;
+
+  animation: scale-in 100ms ease-out;
+  .week[data-state="closed"] {
+    animation: scale-out 100ms ease-out;
+  }
+}

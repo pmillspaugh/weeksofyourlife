@@ -1,0 +1,61 @@
+.subtitle {
+  margin-top: 4px;
+  margin-bottom: 32px;
+}
+
+.controls {
+  margin: 24px -24px;
+  padding: 16px 24px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  background: var(--neutral-color);
+  border-top: 2px solid var(--foreground-color);
+  border-bottom: 2px solid var(--foreground-color);
+}
+
+.colorPicker {
+  border: none;
+  background: none;
+
+  width: 48px;
+  height: 34px;
+  vertical-align: middle;
+
+  cursor: pointer;
+}
+
+/* 
+  Firefox is the only browser I tested (Chrome, Safari, Brave, Firefox)
+  that does not have some extra mysterious space around the color portion
+  of the color picker input. So by setting its height to 16px it looks
+  roughly the same as in the other browsers.
+*/
+@-moz-document url-prefix() {
+  .colorPicker {
+    height: 24px;
+  }
+}
+
+.button {
+  padding: 2px 4px;
+
+  background: var(--background-color);
+  border: 1px solid var(--foreground-color);
+  border-radius: 2px;
+
+  cursor: pointer;
+}
+
+.instructions {
+  padding-left: 24px;
+  margin-top: -24px;
+  margin-bottom: 48px;
+
+  .step {
+    height: 32px;
+    padding: 16px 0;
+  }
+}
