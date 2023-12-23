@@ -67,6 +67,26 @@ export default function Home({
           </React.Fragment>
         ))}
       </motion.main>
+      <footer className={styles.footer}>
+        <p>
+          <sup>*</sup>The code for this website is{" "}
+          <a
+            href="https://github.com/pmillspaugh/weeksofyourlife"
+            target="_blank"
+          >
+            open-source
+          </a>
+          , and I wrote about the implementation{" "}
+          <a
+            href="https://www.petemillspaugh.com/weeks-of-your-life"
+            target="_blank"
+          >
+            on my digital garden
+          </a>
+          .
+        </p>
+        <p className={styles.copyright}>&copy; Pete Millspaugh</p>
+      </footer>
     </TooltipProvider>
   );
 }
