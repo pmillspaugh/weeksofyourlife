@@ -20,6 +20,7 @@ export function useBirthdate(bday: string | undefined) {
   const decades = React.useMemo(() => {
     const tenDecades = [];
     const birthdateUTC = new Date(`${birthdate}T00:00:00Z`);
+    let birthday = new Date(birthdateUTC);
 
     for (let decade = 0; decade < 10; decade++) {
       const decadeStart = new Date(birthdateUTC);
@@ -35,17 +36,16 @@ export function useBirthdate(bday: string | undefined) {
       const decadeWeeks: IWeek[] = [];
       let sunday = new Date(sundayBeforeDecadeStart);
       let saturday = new Date(sunday);
-      let birthday = new Date(birthdateUTC);
       saturday.setUTCDate(saturday.getUTCDate() + 6);
 
       while (saturday < decadeEnd) {
-        const year = sunday.getUTCFullYear();
-        birthday.setUTCFullYear(year);
-
         const isBdayWeek = birthday >= sunday && birthday <= saturday;
+        const year = birthday.getUTCFullYear();
         const birthdayEvent = isBdayWeek
           ? `${year - birthdateUTC.getUTCFullYear()} in ${year}`
           : "";
+
+        if (isBdayWeek) birthday.setUTCFullYear(year + 1);
 
         const weekKey = new Date(sunday).toISOString().split("T")[0];
         const weekEvent = searchParams.get(weekKey);
@@ -67,7 +67,7 @@ export function useBirthdate(bday: string | undefined) {
     }
 
     return tenDecades;
-  }, [searchParams, birthdate]);
+  }, [birthdate, searchParams]);
 
   return { birthdate, handleBirthdateChange, decades };
 }

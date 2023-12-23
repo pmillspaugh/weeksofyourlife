@@ -52,9 +52,15 @@ export default function Home({
             <section className={styles.decade}>
               {decade.map((week) =>
                 new Date(week.sunday) < new Date() ? (
-                  <PastWeek key={week.sunday} week={week} />
+                  <PastWeek
+                    key={`${week.sunday}${week.lifeEvent}`}
+                    week={week}
+                  />
                 ) : (
-                  <FutureWeek key={week.sunday} week={week} />
+                  <FutureWeek
+                    key={`${week.sunday}${week.lifeEvent}`}
+                    week={week}
+                  />
                 )
               )}
             </section>
