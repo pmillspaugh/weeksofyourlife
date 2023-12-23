@@ -11,6 +11,7 @@
   "dependencies": {
     "@radix-ui/react-tooltip": "^1.0.7",
     "@radix-ui/react-visually-hidden": "^1.0.3",
+    "framer-motion": "^10.16.16",
     "lodash.debounce": "^4.0.8",
     "next": "14.0.4",
     "react": "^18",

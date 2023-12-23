@@ -1,10 +1,13 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
 import styles from "./page.module.css";
 import { useBirthdate, DECADE_LABELS } from "@/hooks/useBirthdate.hook";
 import { useAccentColor } from "@/hooks/useAccentColor.hook";
+import { useLoader } from "@/hooks/useLoader.hook";
+import Loading from "@/components/Loading";
 import Heading from "@/components/Heading";
 import Instructions from "@/components/Instructions";
 import PastWeek from "@/components/Week";
@@ -19,9 +22,17 @@ export default function Home({
   const { birthdate, handleBirthdateChange, decades } = useBirthdate(bday);
   const { accentColor, handleAccentColorChange } = useAccentColor(accent);
 
+  const loading = useLoader();
+  if (loading) return <Loading />;
+
   return (
     <TooltipProvider>
-      <main className={styles.main}>
+      <motion.main
+        className={styles.main}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2 }}
+      >
         <Heading Tag="h1" urlKey="title">
           Weeks of your life
         </Heading>
@@ -49,7 +60,7 @@ export default function Home({
             </section>
           </React.Fragment>
         ))}
-      </main>
+      </motion.main>
     </TooltipProvider>
   );
 }
