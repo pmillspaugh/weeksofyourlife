@@ -4,9 +4,9 @@ import styles from "./week.module.css";
 import Tooltip from "@/components/Tooltip";
 import { useRouter, useSearchParams } from "next/navigation";
 
-function formatDate(date: string, showYear?: boolean) {
+function formatDate(date: string) {
   return new Date(date).toLocaleDateString("en-US", {
-    year: showYear ? "numeric" : undefined,
+    year: "numeric",
     month: "long",
     day: "numeric",
     timeZone: "UTC",
@@ -67,7 +67,7 @@ const MemoizedWeek = React.memo(function Week({ week }: { week: IWeek }) {
       }
     >
       <p className={styles.tooltip}>
-        {formatDate(sunday)} to {formatDate(saturday, true)}
+        {formatDate(sunday)} to {formatDate(saturday)}
       </p>
     </Tooltip>
   );

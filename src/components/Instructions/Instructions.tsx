@@ -18,6 +18,7 @@ const Instructions = ({
   return (
     <>
       <p className={styles.subtitle}>
+        <sup>*</sup>
         <em>
           Inspired by Tim Urban&apos;s{" "}
           <a

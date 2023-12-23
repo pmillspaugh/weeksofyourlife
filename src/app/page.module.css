@@ -12,3 +12,15 @@
   flex-wrap: wrap;
   gap: 4px;
 }
+
+.footer {
+  padding: 24px;
+  padding-bottom: 48px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.copyright {
+  font-family: var(--font-mono);
+}
