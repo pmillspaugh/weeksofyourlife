@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Lora, Fira_Code } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
+
 import "./globals.css";
 
 const victorMono = Fira_Code({ subsets: ["latin"], variable: "--font-mono" });
@@ -20,6 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${victorMono.variable} ${lora.variable}`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
