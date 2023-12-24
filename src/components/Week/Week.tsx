@@ -38,12 +38,6 @@ const MemoizedWeek = React.memo(function Week({ week }: { week: IWeek }) {
     router.push(`?${newParams.toString()}`, { scroll: false });
   }, 100);
 
-  function handleLifeEventChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const newEvent = e.target.value;
-    setLifeEvent(newEvent);
-    handleUrlUpdate(newEvent);
-  }
-
   const inputRef = React.useRef<HTMLInputElement>(null);
 
   React.useEffect(() => {
@@ -61,7 +55,8 @@ const MemoizedWeek = React.memo(function Week({ week }: { week: IWeek }) {
           className={styles.week}
           value={lifeEvent}
           data-empty={!lifeEvent}
-          onChange={handleLifeEventChange}
+          onChange={(e) => setLifeEvent(e.target.value)}
+          onBlur={(e) => handleUrlUpdate(e.target.value)}
           maxLength={100}
         />
       }
