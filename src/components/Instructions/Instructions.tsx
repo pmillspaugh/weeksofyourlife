@@ -85,7 +85,7 @@ const Instructions = ({
             <li className={styles.step}>
               Click any week to add a life event.{" "}
               <a href={DFW_URL} target="_blank">
-                Here&apos;s an example of David Foster Wallace&apos;s life.
+                Here&apos;s an example for David Foster Wallace&apos;s life.
               </a>
             </li>
             <li className={styles.step}>
