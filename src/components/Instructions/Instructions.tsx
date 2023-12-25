@@ -16,6 +16,7 @@ const Instructions = ({
   accentColor: string;
   handleAccentColorChange: (newAccentColor: string) => void;
 }) => {
+  const [bday, setBday] = React.useState(birthdate);
   const [showInstructions, setShowInstructions] = React.useState(false);
 
   return (
@@ -43,8 +44,9 @@ const Instructions = ({
           <VisuallyHidden.Root>Select your birthdate</VisuallyHidden.Root>
           <input
             type="date"
-            value={birthdate}
-            onChange={handleBirthdateChange}
+            value={bday}
+            onChange={(e) => setBday(e.target.value)}
+            onBlur={handleBirthdateChange}
           />
         </label>
 
@@ -76,7 +78,10 @@ const Instructions = ({
       {showInstructions && (
         <>
           <ol className={styles.instructions}>
-            <li className={styles.step}>Select your birthdate.</li>
+            <li className={styles.step}>
+              Select your birthdate. Once you click or tab outside of the date
+              picker, the grid of weeks will update.
+            </li>
             <li className={styles.step}>Select an accent color (optional).</li>
             <li className={styles.step}>
               Each box is a week of your life, grouped by decade. Hover over any
