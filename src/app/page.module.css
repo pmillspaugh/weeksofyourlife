@@ -18,9 +18,16 @@
   padding-bottom: 48px;
 
   display: flex;
+  flex-direction: column;
+  gap: 16px;
   justify-content: space-between;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 }
 
 .copyright {
+  padding-top: 4px;
   font-family: var(--font-mono);
 }
