@@ -14,11 +14,12 @@
     "@vercel/analytics": "^1.1.1",
     "framer-motion": "^10.16.16",
     "lodash.debounce": "^4.0.8",
-    "next": "14.0.4",
+    "next": "^14.2.9",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@onlook/nextjs": "^2.1.1",
     "@types/lodash.debounce": "^4.0.9",
     "@types/node": "^20",
     "@types/react": "^18",
