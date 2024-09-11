@@ -1,4 +1,11 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
+const path = require("path");
 
-module.exports = nextConfig
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  experimental: {
+    swcPlugins: [["@onlook/nextjs", { root: path.resolve(".") }]],
+  },
+};
+
+module.exports = nextConfig;
